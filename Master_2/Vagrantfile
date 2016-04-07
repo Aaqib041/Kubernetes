@@ -1,0 +1,38 @@
+# MASTER_VAGRANT FILE
+# Author : AKEEB.K.Y
+# Date : April 6th , 2016
+# Description : This Vagrant File will setup the Kubernates Master for Cluster.
+
+
+Vagrant.configure(2) do |config|
+
+config.vm.box = "Centos7"
+
+# Create a private network, which allows host-only access to the machine
+# using a specific IP.
+config.vm.network "private_network", ip: "192.168.20.20"
+# Example for VirtualBox:
+config.vm.provider "virtualbox" do |vb|
+vb.memory = "2048"
+end
+
+# Enable provisioning with a shell script. Additional provisioners such as
+# Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+# documentation for more information about their specific syntax and use.
+config.vm.provision "shell", path: "master2_start_script.sh"
+
+config.vm.provision "shell", path: "kube-ui-image.sh"
+
+config.vm.provision "shell", path: "kube-system-namespace.sh"
+
+config.vm.provision "shell", path: "Create-rc.sh"
+
+config.vm.provision "shell", path: "Create-service.sh"
+
+config.vm.provision "shell", path: "dashboard.sh"
+
+
+
+
+
+end
