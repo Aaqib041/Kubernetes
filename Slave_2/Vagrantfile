@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
 config.vm.box = "Centos7"
 # using a specific IP.
-config.vm.network "private_network", ip: "192.168.10.13"
+config.vm.network "private_network", ip: "192.168.10.12"
 
 config.vm.provider "virtualbox" do |vb|
   #   # Display the VirtualBox GUI when booting the machine
@@ -21,6 +21,6 @@ end
 
 
 #SHELL
-   config.vm.provision "shell", path: "kudos_node3_script_files/node3_start_script.sh"
+   config.vm.provision "shell", path: "kudos_node2_script_files/node3_start_script.sh"
 
 end

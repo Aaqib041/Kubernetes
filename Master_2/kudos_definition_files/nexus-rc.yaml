@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nexus
+  labels:
+    app: nexus
+spec:
+  containers:
+  - name: tomcat-container
+    image: sonatype/nexus
+    ports:
+    - containerPort: 9000

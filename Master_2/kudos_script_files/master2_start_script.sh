@@ -11,6 +11,8 @@ foo=`cat <<-EOF >> /etc/hosts
 192.168.20.20   kube-master2
 192.168.10.11   kube-node1
 192.168.10.12  kube-node2
+192.168.10.13  kube-node3
+
 EOF`
 
 sudo yum -y install etcd kubernetes

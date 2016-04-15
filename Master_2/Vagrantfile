@@ -19,17 +19,24 @@ end
 # Enable provisioning with a shell script. Additional provisioners such as
 # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
 # documentation for more information about their specific syntax and use.
-config.vm.provision "shell", path: "master2_start_script.sh"
+config.vm.provision "shell", path: "kudos_script_files/master2_start_script.sh"
 
-config.vm.provision "shell", path: "kube-ui-image.sh"
+config.vm.provision "shell", path: "kudos_script_files/kube-ui-image.sh"
 
-config.vm.provision "shell", path: "kube-system-namespace.sh"
+config.vm.provision "shell", path: "kudos_script_files/kube-system-namespace.sh"
 
-config.vm.provision "shell", path: "Create-rc.sh"
+config.vm.provision "shell", path: "kudos_script_files/Create-rc.sh"
 
-config.vm.provision "shell", path: "Create-service.sh"
+config.vm.provision "shell", path: "kudos_script_files/Create-service.sh"
 
-config.vm.provision "shell", path: "dashboard.sh"
+config.vm.provision "shell", path: "kudos_script_files/dashboard.sh"
+
+config.vm.provision "shell", path: "kudos_script_files/jenkins_rc.sh"
+
+config.vm.provision "shell", path: "kudos_script_files/jenkins_svc.sh"
+
+
+
 
 
 

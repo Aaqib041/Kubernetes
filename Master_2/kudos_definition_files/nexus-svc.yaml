@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-svc
+  labels:
+    app: nexus-svc
+    heritage: helm
+spec:
+  ports:
+  - port: 80
+    targetPort: 9000
+    protocol: TCP
+    nodePort: 31145
+
+  selector:
+    app: nexus
+  "type": "NodePort"
